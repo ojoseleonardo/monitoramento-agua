@@ -1,4 +1,4 @@
-# 💧 Projeto de Monitoramento de Consumo de Água
+# 🚰 Projeto de Monitoramento de Consumo de Água
 
 Bem-vindo ao projeto de **Monitoramento de Consumo de Água**! Esta API foi desenvolvida para ajudar na conscientização e eficiência no uso da água, alinhada com o **ODS 6: Garantir disponibilidade e manejo sustentável da água para todos**.
 
@@ -38,7 +38,6 @@ Esta API foi construída utilizando **NestJS** e permite monitorar o consumo men
    
    ```bash
    git clone https://github.com/ojoseleonardo/monitoramento-agua.git
-   cd monitoramento-agua
    ```
 
 ### Passo 2: Instale as Dependências

@@ -1,103 +1,106 @@
-<<<<<<< HEAD
-# monitoramento-agua
-=======
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 💧 Projeto de Monitoramento de Consumo de Água
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Bem-vindo ao projeto de **Monitoramento de Consumo de Água**! Esta API foi desenvolvida para ajudar na conscientização e eficiência no uso da água, alinhada com o **ODS 6: Garantir disponibilidade e manejo sustentável da água para todos**.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📋 Índice
+- Descrição
+- Funcionalidades
+- Tecnologias Utilizadas
+- Instalação e Execução
+- Rotas da API
+- Contribuições
+- Licença
 
-## Description
+## 📖 Descrição
+Esta API foi construída utilizando **NestJS** e permite monitorar o consumo mensal de água dos usuários. Através dela, os usuários podem registrar e visualizar seus consumos, além de receber alertas sobre o aumento no uso, promovendo práticas sustentáveis.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## ⚙️ Funcionalidades
 
-## Project setup
+1. **Registro de Consumo de Água**
+   - Permite que os usuários registrem o consumo de água mensal, incluindo o ID do usuário, a quantidade consumida em metros cúbicos e a data da leitura.
 
-```bash
-$ npm install
-```
+2. **Consulta de Histórico de Consumo**
+   - Permite que os usuários consultem o histórico de consumo de água, especificando um intervalo de datas.
 
-## Compile and run the project
+3. **Alertas de Consumo Elevado**
+   - Emite alertas para usuários que ultrapassaram o consumo em relação ao mês anterior.
 
-```bash
-# development
-$ npm run start
+## 🛠️ Tecnologias Utilizadas
 
-# watch mode
-$ npm run start:dev
+- **NestJS** - Framework para a construção da API.
+- **TypeORM** - ORM para gerenciamento das interações com o banco de dados.
+- **SQLite** - Banco de dados para armazenamento local.
+- **Postman** - Para testes de integração e validação das rotas.
 
-# production mode
-$ npm run start:prod
-```
+## 🚀 Instalação e Execução
 
-## Run tests
+### Passo 1: Clone o Repositório
 
-```bash
-# unit tests
-$ npm run test
+   git clone https://github.com/ojoseleonardo/monitoramento-agua.git
+   cd monitoramento-agua
 
-# e2e tests
-$ npm run test:e2e
+### Passo 2: Instale as Dependências
 
-# test coverage
-$ npm run test:cov
-```
+   Certifique-se de que você tenha o Node.js e o Nest CLI instalados.
 
-## Deployment
+   npm install
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### Passo 3: Configuração do Banco de Dados
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+   A aplicação usa **SQLite** como banco de dados. O arquivo `database.sqlite` será gerado automaticamente na primeira execução.
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+### Passo 4: Execute a Aplicação
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+   npm run start
 
-## Resources
+   A API estará disponível em `http://localhost:3000`.
 
-Check out a few resources that may come in handy when working with NestJS:
+## 📌 Rotas da API
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### 1. Registro de Consumo
+   - **Método:** POST
+   - **URL:** /consumo
+   - **Exemplo de Corpo da Requisição (JSON):**
+     {
+       "usuarioId": 1,
+       "quantidade": 10.5,
+       "dataLeitura": "2024-11-14"
+     }
 
-## Support
+### 2. Consulta de Histórico
+   - **Método:** GET
+   - **URL:** /consumo/historico
+   - **Parâmetros de Query:**
+     - `usuarioId` (Número): ID do usuário.
+     - `inicio` (Data): Data inicial no formato YYYY-MM-DD.
+     - `fim` (Data): Data final no formato YYYY-MM-DD.
+   - **Exemplo de Requisição:**
+     GET /consumo/historico?usuarioId=1&inicio=2024-01-01&fim=2024-12-31
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 3. Alertas de Consumo Elevado
+   - **Método:** GET
+   - **URL:** /consumo/alertas
+   - **Descrição:** Emite alertas caso o consumo do mês atual seja maior que o do mês anterior.
 
-## Stay in touch
+## 🤝 Contribuições
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Contribuições são sempre bem-vindas! Se você deseja colaborar, siga os passos abaixo:
 
-## License
+1. Faça um fork do repositório.
+2. Crie uma nova branch com a sua feature:
+   git checkout -b feature/minha-feature
+3. Commit suas alterações:
+   git commit -m 'Adicionei minha nova feature'
+4. Faça o push da branch:
+   git push origin feature/minha-feature
+5. Abra um Pull Request.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
->>>>>>> ef688d0 (Projeto de Monitoramento de Consumo de Água)
+## 📄 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+---
+
+### 🌱 Impacto na Comunidade
+
+Esse projeto incentiva a sustentabilidade, oferecendo uma ferramenta de monitoramento e controle do uso de água. Com isso, esperamos contribuir para a conscientização sobre a importância do uso consciente desse recurso tão precioso.

@@ -35,15 +35,19 @@ Esta API foi construída utilizando **NestJS** e permite monitorar o consumo men
 ## 🚀 Instalação e Execução
 
 ### Passo 1: Clone o Repositório
-
+   
+   ```bash
    git clone https://github.com/ojoseleonardo/monitoramento-agua.git
    cd monitoramento-agua
+   ```
 
 ### Passo 2: Instale as Dependências
 
    Certifique-se de que você tenha o Node.js e o Nest CLI instalados.
-
+   
+   ```bash
    npm install
+   ```
 
 ### Passo 3: Configuração do Banco de Dados
 
@@ -51,7 +55,9 @@ Esta API foi construída utilizando **NestJS** e permite monitorar o consumo men
 
 ### Passo 4: Execute a Aplicação
 
+   ```bash
    npm run start
+   ```
 
    A API estará disponível em `http://localhost:3000`.
 
@@ -61,11 +67,13 @@ Esta API foi construída utilizando **NestJS** e permite monitorar o consumo men
    - **Método:** POST
    - **URL:** /consumo
    - **Exemplo de Corpo da Requisição (JSON):**
+   ```bash
      {
        "usuarioId": 1,
        "quantidade": 10.5,
        "dataLeitura": "2024-11-14"
      }
+   ```
 
 ### 2. Consulta de Histórico
    - **Método:** GET
@@ -75,7 +83,9 @@ Esta API foi construída utilizando **NestJS** e permite monitorar o consumo men
      - `inicio` (Data): Data inicial no formato YYYY-MM-DD.
      - `fim` (Data): Data final no formato YYYY-MM-DD.
    - **Exemplo de Requisição:**
+     ```bash
      GET /consumo/historico?usuarioId=1&inicio=2024-01-01&fim=2024-12-31
+      ```
 
 ### 3. Alertas de Consumo Elevado
    - **Método:** GET
@@ -88,10 +98,13 @@ Contribuições são sempre bem-vindas! Se você deseja colaborar, siga os passo
 
 1. Faça um fork do repositório.
 2. Crie uma nova branch com a sua feature:
+   ```bash
    git checkout -b feature/minha-feature
 3. Commit suas alterações:
+   ```bash
    git commit -m 'Adicionei minha nova feature'
 4. Faça o push da branch:
+   ```bash
    git push origin feature/minha-feature
 5. Abra um Pull Request.
 
@@ -102,5 +115,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 ---
 
 ### 🌱 Impacto na Comunidade
-
+```bash
 Esse projeto incentiva a sustentabilidade, oferecendo uma ferramenta de monitoramento e controle do uso de água. Com isso, esperamos contribuir para a conscientização sobre a importância do uso consciente desse recurso tão precioso.

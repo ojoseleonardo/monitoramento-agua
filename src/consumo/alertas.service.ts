@@ -6,16 +6,24 @@ export class AlertasService {
     constructor(private readonly consumoService: ConsumoService) { }
 
     async verificarAlertas(usuarioId: number) {
+        // Obter os dois últimos meses de consumo
         const consumos = await this.consumoService.obterUltimosDoisMeses(usuarioId);
 
-        if (consumos.length < 2) return { alerta: false, mensagem: 'Dados insuficientes' };
-
-        const [ultimoMes, mesAnterior] = consumos;
-
-        if (ultimoMes.quantidade > mesAnterior.quantidade) {
-            return { alerta: true, mensagem: 'Consumo elevado em relação ao mês anterior' };
+        // Verificar se temos dados suficientes
+        if (consumos.length < 2) {
+            return { alerta: false, mensagem: 'Dados insuficientes para gerar alerta.' };
         }
 
-        return { alerta: false };
+        const [ultimoMes, mesAnterior] = consumos;
+        console.log('Último mês:', ultimoMes);
+        console.log('Mês anterior:', mesAnterior);
+
+        // Comparar os consumos dos dois meses
+        if (ultimoMes.quantidade > mesAnterior.quantidade) {
+            console.log('Alerta: Consumo elevado em relação ao mês anterior');
+            return { alerta: true, mensagem: 'Consumo elevado em relação ao mês anterior.' };
+        }
+        console.log('Sem alerta');
+        return { alerta: false, mensagem: 'Consumo dentro do esperado.' };
     }
 }

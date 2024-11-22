@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between } from 'typeorm';
+import { Repository, Between, MoreThanOrEqual } from 'typeorm';
 import { Consumo } from './consumo.entity';
 
 @Injectable()
@@ -25,12 +25,24 @@ export class ConsumoService {
         });
     }
 
-    // Método para obter os dois últimos meses de consumo de um usuário
-    async obterUltimosDoisMeses(usuarioId: number): Promise<Consumo[]> {
-        return this.consumoRepository.find({
-            where: { usuarioId },
-            order: { dataLeitura: 'DESC' },
-            take: 2,
+    // Função para obter os consumos dos dois últimos meses
+    async obterUltimosDoisMeses(usuarioId: number) {
+        const now = new Date();
+        const inicioMesPassado = new Date(now);
+        inicioMesPassado.setMonth(now.getMonth() - 1); // Um mês atrás
+
+        const inicioDoisMeses = new Date(now);
+        inicioDoisMeses.setMonth(now.getMonth() - 2); // Dois meses atrás
+
+        console.log('Data início dois meses:', inicioDoisMeses);
+        console.log('Data início um mês:', inicioMesPassado);
+
+        // Verifique se o intervalo entre os dois meses está correto
+        return await this.consumoRepository.find({
+            where: {
+                usuarioId: usuarioId,
+                dataLeitura: Between(inicioDoisMeses, inicioMesPassado),
+            },
         });
     }
 }

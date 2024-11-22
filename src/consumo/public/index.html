@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Consumo de Água</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Monitoramento de Consumo de Água</h1>
+
+    <!-- Navegação -->
+    <nav>
+        <button id="cadastro-tab">Cadastrar Consumo</button>
+        <button id="historico-tab">Consultar Histórico</button>
+        <button id="alertas-tab">Alertas de Consumo</button>
+    </nav>
+
+    <!-- Formulário de Cadastro -->
+    <section id="cadastro-section" class="tab">
+        <h2>Cadastrar Consumo</h2>
+        <form id="cadastro-form">
+            <label for="usuarioId">Usuário ID:</label>
+            <input type="number" id="usuarioId" required><br>
+
+            <label for="quantidade">Quantidade (m³):</label>
+            <input type="number" id="quantidade" step="0.1" required><br>
+
+            <label for="dataLeitura">Data de Leitura:</label>
+            <input type="date" id="dataLeitura" required><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p id="cadastro-mensagem"></p>
+    </section>
+
+    <!-- Formulário de Histórico -->
+    <section id="historico-section" class="tab hidden">
+        <h2>Consultar Histórico</h2>
+        <form id="historico-form">
+            <label for="historico-usuarioId">Usuário ID:</label>
+            <input type="number" id="historico-usuarioId" required><br>
+
+            <label for="inicio">Data Inicial:</label>
+            <input type="date" id="inicio" required><br>
+
+            <label for="fim">Data Final:</label>
+            <input type="date" id="fim" required><br>
+
+            <button type="submit">Consultar</button>
+        </form>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Quantidade (m³)</th>
+                    <th>Data de Leitura</th>
+                </tr>
+            </thead>
+            <tbody id="historico-table"></tbody>
+        </table>
+    </section>
+
+    <!-- Alertas -->
+    <section id="alertas-section" class="tab hidden">
+        <h2>Alertas de Consumo Elevado</h2>
+        <form id="alertas-form">
+            <label for="alertas-usuarioId">Usuário ID:</label>
+            <input type="number" id="alertas-usuarioId" required><br>
+            <button type="submit">Consultar</button>
+        </form>
+        <ul id="alertas-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
